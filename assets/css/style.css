@@ -13,6 +13,9 @@ a {
 html, body {
     background: #10092c;
     overscroll-behavior: none;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .header {
