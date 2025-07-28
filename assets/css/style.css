@@ -14,10 +14,10 @@ html,
 body {
     background: url(../images/bg.jpg) 50% 50% no-repeat;
     background-size: cover;
-    overscroll-behavior: none;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    overscroll-behavior: none;
 }
 
 .header {
@@ -43,12 +43,12 @@ button {
     padding: 1em 1.5em;
     color: #fff;
     font-size: 16px;
-    border: 1px solid rgba(255, 99, 99, 0.5);
+    border: 1px solid rgba(255, 99, 99, 0.6);
     outline: none;
     border-radius: 0.75em;
     backdrop-filter: blur(20px);
     cursor: pointer;
-    background: linear-gradient(180deg, rgba(126, 8, 8, 0) 0%, rgba(113, 23, 15, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(126, 9, 9, 0) 0%, rgba(113, 23, 15, 0.92) 100%);
     box-shadow: inset 0 0 12px #bf97ff3d;
 }
 
@@ -59,6 +59,7 @@ button {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    backdrop-filter: blur(20px);
 }
 
 .container {

@@ -17,7 +17,8 @@ const params = {
 };
 
 const trail = new Array(params.pointsNumber);
-for (let i = 0; i < params.pointsNumber; i++) {
+
+for (let i = 0; i < params.pointsNumber + 40; i++) {
     trail[i] = {
         x: pointer.x,
         y: pointer.y,
@@ -54,9 +55,11 @@ function update(t) {
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     trail.forEach((p, pIdx) => {
         const prev = pIdx === 0 ? pointer : trail[pIdx - 1];
         const spring = pIdx === 0 ? 0.4 * params.spring : params.spring;
+
         p.dx += (prev.x - p.x) * spring;
         p.dy += (prev.y - p.y) * spring;
         p.dx *= params.friction;
@@ -67,8 +70,8 @@ function update(t) {
     });
 
     var gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, "rgb(251, 129, 129)");
-    gradient.addColorStop(1, "rgb(255, 0, 0)");
+    gradient.addColorStop(0, "rgb(251,129,129)");
+    gradient.addColorStop(1, "rgb(255,0,0)");
 
     ctx.strokeStyle = gradient;
     ctx.lineCap = "round";
@@ -80,7 +83,7 @@ function update(t) {
         const yc = 0.5 * (trail[i].y + trail[i + 1].y);
 
         ctx.quadraticCurveTo(trail[i].x, trail[i].y, xc, yc);
-        ctx.lineWidth = params.widthFactor * (params.pointsNumber - i) * 0.7;
+        ctx.lineWidth = params.widthFactor * (params.pointsNumber - i) * 0.3;
         ctx.stroke();
     }
 
